@@ -1,0 +1,11 @@
+sqlalchemy>=2.0.25
+psycopg2-binary>=2.9.9
+fastapi
+uvicorn
+sqlalchemy
+psycopg2-binary
+python-dotenv
+passlib[bcrypt]         # For password hashing
+python-jose[cryptography] # For JWT handling
+python-dotenv
+requests

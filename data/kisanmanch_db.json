@@ -1,0 +1,16 @@
+{
+  "farmers": [
+    {
+      "farmer_id": "KM20250413044844234",
+      "name": "Nitin Sharma",
+      "aadhaar": "123456789123",
+      "mobile_number": "7017181515",
+      "crop": "rice",
+      "location": "bsr",
+      "village": "bsr",
+      "district": "Gautam Buddha Nagar",
+      "state": "Uttar Pradesh",
+      "registered_at": "2025-04-13T04:48:44.993077"
+    }
+  ]
+}
