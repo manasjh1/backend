@@ -9,3 +9,4 @@ passlib[bcrypt]         # For password hashing
 python-jose[cryptography] # For JWT handling
 python-dotenv
 requests
+email-validator
