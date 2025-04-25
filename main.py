@@ -53,10 +53,18 @@ app.add_middleware(
 )
 
 # --- Configuration & OTP Store ---
-TWOFACTOR_API_KEY = os.getenv("TWOFACTOR_API_KEY")
-if not TWOFACTOR_API_KEY: log.warning("TWOFACTOR_API_KEY not set.")
-otp_store = {}
-log.warning("Using IN-MEMORY OTP store (NOT FOR PRODUCTION).")
+def send_otp(number, otp):
+    if not TWOFACTOR_API_KEY:
+        log.error("No API key provided — can't send OTP.")
+        return
+
+    url = f"https://2factor.in/API/V1/{TWOFACTOR_API_KEY}/SMS/{number}/{otp}/AUTOGEN"
+    try:
+        response = requests.get(url)
+        response.raise_for_status()
+        log.info(f"2Factor response: {response.text}")
+    except Exception as e:
+        log.error(f"Failed to send OTP via 2Factor: {e}")
 
 # --- Helper Functions ---
 def generate_farmer_id() -> str:
