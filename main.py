@@ -6,6 +6,8 @@ import os
 import requests
 from datetime import datetime, timezone, timedelta
 from typing import Optional, Dict
+otp_store = {}
+
 
 from fastapi import FastAPI, HTTPException, Depends, status, Response
 from fastapi.middleware.cors import CORSMiddleware
